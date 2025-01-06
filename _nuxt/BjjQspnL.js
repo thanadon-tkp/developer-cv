@@ -1,1 +1,0 @@
-import{_ as n}from"./Cqe7BW8d.js";import{_ as s,c as a,a as t,b as c,o as r}from"./DQaMcXRx.js";import"./DdWNp6SD.js";const _={},m={class:"flex gap-2 items-center"};function i(d,e){const o=n;return r(),a("div",null,[t("div",m,[e[0]||(e[0]=t("p",null,"รักแฟน คิดถึงแฟน",-1)),c(o,{name:"mdi:tag-heart"})])])}const u=s(_,[["render",i]]);export{u as default};
