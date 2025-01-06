@@ -19,6 +19,40 @@ const contacts = [
     iconSize: "h-6 w-6",
   },
 ];
+const listMenu = [
+  {
+    key: "about",
+    label: "About",
+  },
+  {
+    key: "experience",
+    label: "Experience",
+  },
+  {
+    key: "projects",
+    label: "Projects",
+  },
+];
+const about = ref(null);
+const aboutIsVisible = useElementVisibility(about);
+const experience = ref(null);
+const experienceIsVisible = useElementVisibility(experience);
+const projects = ref(null);
+const projectsIsVisible = useElementVisibility(projects);
+
+const menuActive = computed(() => {
+  let menu = "";
+
+  if (aboutIsVisible.value) {
+    menu = "about";
+  } else if (experienceIsVisible.value) {
+    menu = "experience";
+  } else if (projectsIsVisible.value) {
+    menu = "projects";
+  }
+
+  return menu;
+});
 </script>
 
 <template>
@@ -47,14 +81,21 @@ const contacts = [
       </div>
       <!-- menu -->
       <div class="flex flex-col gap-4 max-lg:hidden w-fit">
-        <a href="#about" class="uppercase hover:text-white duration-200">
-          About
-        </a>
-        <a href="#experience" class="uppercase hover:text-white duration-200">
-          Experience
-        </a>
-        <a href="#projects" class="uppercase hover:text-white duration-200">
-          Projects
+        <a
+          v-for="item in listMenu"
+          :href="`#${item.key}`"
+          class="uppercase flex items-center gap-4 hover:text-white duration-200"
+          :class="[menuActive == item.key && 'text-white font-medium']"
+        >
+        <!-- line -->
+          <div
+            class="w-6 h-0.5 border bg-white duration-200"
+            :class="{
+              '!w-12': menuActive == item.key,
+            }"
+          ></div>
+          <!-- label -->
+          {{ item.label }}
         </a>
       </div>
       <!-- contact -->
@@ -86,6 +127,7 @@ const contacts = [
       <!-- about -->
       <section
         id="about"
+        ref="about"
         class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       >
         <!-- title -->
@@ -110,6 +152,7 @@ const contacts = [
       <!-- experience -->
       <section
         id="experience"
+        ref="experience"
         class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       >
         <!-- title -->
@@ -145,6 +188,7 @@ const contacts = [
       <!-- projects -->
       <section
         id="projects"
+        ref="projects"
         class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       >
         <!-- title -->
