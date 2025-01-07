@@ -33,6 +33,54 @@ const listMenu = [
     label: "Projects",
   },
 ];
+const listExperience = [
+  {
+    period: "August 2022 - Present",
+    job: "Front End Developer",
+    companyName: "T-DEV Co., Ltd.",
+    companyLink: "https://www.facebook.com/tdevco/",
+    description:
+      "Developed internal web applications for the organization, including machine monitoring systems, admin dashboards, and payment gateways, while optimizing website performance through caching techniques and file size minimization. Collaborated seamlessly with Back-End developers to integrate features, contributed to the development of new functionalities for the company’s online platform, and worked closely with the team under project lead supervision. Regularly communicated project updates to ensure alignment and progress across all stakeholders.",
+    technologies: [
+      "JavaScript",
+      "Vue.js",
+      "Nuxt.js",
+      "HTML",
+      "CSS & SCSS",
+      "Tailwind CSS",
+      "Nuxt UI",
+      "Docker",
+      "Golang",
+    ],
+  },
+  {
+    period: "July 2021 - March 2022",
+    job: "Internship",
+    companyName: "Siam Retail Development Co., Ltd",
+    companyLink: null,
+    description:
+      "Developed a web application to streamline ERP data preparation for internal use, utilizing C# and the .NET Framework for backend coding, Bootstrap 5 for responsive design, and SQL Server and Oracle for database management. Additionally, contributed to website design using Figma to create user-friendly interfaces.",
+    technologies: [
+      "C#",
+      ".NET Framework",
+      "Bootstrap 5",
+      "HTML & CSS",
+      "JavaScript",
+      "SQL Server",
+      "Oracle",
+    ],
+  },
+  {
+    period: "2018 - 2019",
+    job: "Hardware,MII Camp 2 | Software,MII Camp 3",
+    companyName: "Mahanakorn University of Technology",
+    companyLink: null,
+    description:
+      "A volunteer camp for repairing computers in rural schools, involving teams specializing in hardware, software, and networking.",
+    technologies: [],
+  },
+];
+
 const about = ref(null);
 const aboutIsVisible = useElementVisibility(about);
 const experience = ref(null);
@@ -57,7 +105,7 @@ const menuActive = computed(() => {
 
 <template>
   <div
-    class="lg:flex lg:justify-between lg:gap-4 px-6 py-12 md:px-12 md:py-16 lg:py-0"
+    class="lg:flex lg:justify-between lg:gap-2 px-6 py-12 md:px-12 md:py-16 lg:py-0"
   >
     <header
       class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24"
@@ -87,7 +135,7 @@ const menuActive = computed(() => {
           class="uppercase flex items-center gap-4 hover:text-white duration-200"
           :class="[menuActive == item.key && 'text-white font-medium']"
         >
-        <!-- line -->
+          <!-- line -->
           <div
             class="w-6 h-0.5 border bg-white duration-200"
             :class="{
@@ -122,13 +170,12 @@ const menuActive = computed(() => {
         />
       </div>
     </header>
-
     <main class="pt-10 lg:pt-24 lg:w-[52%] lg:py-24">
       <!-- about -->
       <section
         id="about"
         ref="about"
-        class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+        class="mb-16 scroll-mt-16 md:mb-24 lg:scroll-mt-24"
       >
         <!-- title -->
         <div
@@ -140,20 +187,26 @@ const menuActive = computed(() => {
             About
           </h2>
         </div>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-          corrupti odio perferendis minima, consectetur distinctio nihil laborum
-          quod officia, tempore eum, voluptatum harum est ea maiores maxime.
-          Perferendis blanditiis aspernatur officia aliquam vel sit ipsam ut,
-          expedita possimus dolore, quia impedit hic nesciunt perspiciatis.
-          Maxime necessitatibus inventore at aliquam pariatur!
+        <p class="mb-4">
+          A motivated Front-End Developer with a strong passion for creating
+          user-friendly and efficient web applications. I continuously expand my
+          skills and stay updated with the latest technologies to deliver
+          high-quality solutions. My ability to learn quickly and adapt to new
+          challenges enables me to tackle complex problems effectively.
+        </p>
+        <p class="mb-4">
+          With a clear career path toward becoming a Full-Stack Developer, I am
+          eager to take on new responsibilities and contribute to team success.
+          I excel in collaborative environments, easily building rapport with
+          colleagues, and bringing a proactive approach to every task. Ready to
+          hit the ground running and deliver impactful results from day one.
         </p>
       </section>
       <!-- experience -->
       <section
         id="experience"
         ref="experience"
-        class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+        class="mb-16 scroll-mt-16 md:mb-24 lg:scroll-mt-24"
       >
         <!-- title -->
         <div
@@ -165,31 +218,57 @@ const menuActive = computed(() => {
             Experience
           </h2>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-          autem id placeat molestias dolorum. Alias illum magnam tempore!
-          Debitis modi doloribus hic, voluptas explicabo ut, temporibus
-          molestiae a, quis cumque molestias! A asperiores eius sunt doloremque
-          aspernatur porro tempore nemo ducimus commodi ipsam. Laudantium
-          obcaecati at suscipit, necessitatibus sed explicabo ex unde minima
-          libero officia id. Laboriosam quo consequatur optio eligendi laborum
-          maiores adipisci porro cupiditate odit amet corporis, earum deleniti
-          incidunt aut. Dolorum iusto laudantium deleniti velit minus nostrum
-          numquam ab! Natus numquam sint qui in placeat corporis ducimus ex,
-          veniam illo assumenda modi, aspernatur quae, adipisci saepe quas aut
-          officiis consectetur totam sequi praesentium eveniet beatae.
-          Consequuntur magnam ipsa fugiat quis tenetur, reprehenderit quia
-          ratione harum accusamus corrupti officiis maxime molestiae adipisci
-          enim magni nobis debitis voluptatibus fuga beatae, atque aperiam modi?
-          Quo aliquid doloremque mollitia itaque animi molestiae rem distinctio
-          quidem. Similique tenetur minus rem quae aliquid.
-        </p>
+        <!-- list experience -->
+        <ul>
+          <li
+            v-for="item in listExperience"
+            class="grid grid-cols-1 lg:grid-cols-[minmax(10.5rem,auto)_1fr] gap-2 mb-12"
+          >
+            <!-- period -->
+            <h2
+              class="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500"
+            >
+              {{ item.period }}
+            </h2>
+            <!-- details -->
+            <div>
+              <NuxtLink
+                :to="item.companyLink"
+                target="_blank"
+                class="font-medium leading-3 text-slate-200 hover:text-violet-300 focus-visible:text-violet-300 text-base"
+              >
+                <span>
+                  {{ item.job }} ·
+                  <span class="inline-block"> {{ item.companyName }}</span>
+                  <UIcon
+                    v-if="item.companyLink"
+                    name="line-md:external-link"
+                    class="ml-1 -mb-1"
+                  />
+                </span>
+              </NuxtLink>
+              <!-- description -->
+              <p class="mt-2 text-sm leading-normal">
+                {{ item.description }}
+              </p>
+              <!-- technologies -->
+              <ul class="mt-2 flex gap-2 flex-wrap">
+                <li
+                  v-for="technologie in item.technologies"
+                  class="flex items-center rounded-full bg-violet-400/10 px-3 py-1 text-xs font-medium leading-5 text-violet-300"
+                >
+                  {{ technologie }}
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </section>
       <!-- projects -->
       <section
         id="projects"
         ref="projects"
-        class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+        class="mb-16 scroll-mt-16 md:mb-24 lg:scroll-mt-24"
       >
         <!-- title -->
         <div

@@ -6,7 +6,7 @@ useHead({
   },
   bodyAttrs: {
     class:
-      "bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-800 selection:text-teal-200",
+      "bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-violet-800/20 selection:text-violet-200",
   },
 });
 const { x, y } = useMouse();
