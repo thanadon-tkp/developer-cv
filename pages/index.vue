@@ -119,7 +119,7 @@ const listProjects = computed(() => {
       [
         {
           type: "image",
-          src: "/im-control-desktop.png",
+          src: "/im-control-desktop.jpeg",
           text: ["Web monitor & control", "(Laundry)"],
         },
         {
@@ -128,34 +128,34 @@ const listProjects = computed(() => {
         },
         {
           type: "image",
-          src: "/im-control-desktop-3.png",
+          src: "/im-control-desktop-3.jpeg",
           text: ["Manage Branches"],
         },
         {
           type: "image",
-          src: "/im-control-desktop-2.png",
+          src: "/im-control-desktop-2.jpeg",
           text: ["Dashboard"],
         },
       ],
       [
         {
           type: "image",
-          src: "/otteri-2.png",
+          src: "/otteri-2.jpeg",
           text: ["Web Admin"],
         },
         {
           type: "image",
-          src: "/qr-box-1.png",
+          src: "/qr-box-1.jpeg",
           text: ["QR Box", "monitor & control"],
         },
         {
           type: "image",
-          src: "/qr-box-4.png",
+          src: "/qr-box-4.jpeg",
           text: ["QR Box", "summary"],
         },
         {
           type: "image",
-          src: "/qr-box-3.png",
+          src: "/qr-box-3.jpeg",
           text: ["Control machine"],
         },
       ],
@@ -165,7 +165,7 @@ const listProjects = computed(() => {
     [
       {
         type: "image",
-        src: "/im-control-desktop.png",
+        src: "/im-control-desktop.jpeg",
         text: ["Web monitor & control", "(Laundry)"],
       },
       {
@@ -180,34 +180,34 @@ const listProjects = computed(() => {
       },
       {
         type: "image",
-        src: "/im-control-desktop-3.png",
+        src: "/im-control-desktop-3.jpeg",
         text: ["Manage Branches"],
       },
       {
         type: "image",
-        src: "/im-control-desktop-2.png",
+        src: "/im-control-desktop-2.jpeg",
         text: ["Dashboard"],
       },
     ],
     [
       {
         type: "image",
-        src: "/otteri-2.png",
+        src: "/otteri-2.jpeg",
         text: ["Web Admin"],
       },
       {
         type: "image",
-        src: "/qr-box-1.png",
+        src: "/qr-box-1.jpeg",
         text: ["QR Box", "monitor & control"],
       },
       {
         type: "image",
-        src: "/qr-box-4.png",
+        src: "/qr-box-4.jpeg",
         text: ["QR Box", "summary"],
       },
       {
         type: "image",
-        src: "/qr-box-3.png",
+        src: "/qr-box-3.jpeg",
         text: ["Control machine"],
       },
     ],
