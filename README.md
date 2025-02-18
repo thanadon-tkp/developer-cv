@@ -1,75 +1,26 @@
-# Nuxt Minimal Starter
+# 👨‍💻 Front End Developer 🚀  
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 🌟 About Me  
+Hello! I'm a passionate **Front End Developer** with experience in building modern web applications.  
+I specialize in **Nuxt 3, Vue.js, TypeScript, Node.js, and Tailwind CSS**.  
+I enjoy solving complex problems, writing clean code, and learning new technologies.  
 
-## Setup
+🔹 **Experience:** 3+ years in Web Development  
+🔹 **Tech Stack:** Nuxt 3, Vue.js, TypeScript, Node.js, Tailwind CSS, SCSS   
+🔹 **Currently Learning:** Cloud Functions, Edge Computing, Web Performance Optimization  
 
-Make sure to install dependencies:
+## 🛠️ Skills  
+- 🔹 **Frontend:** Vue.js, Nuxt 3, TypeScript, Tailwind CSS  
+- 🔹 **Backend:** Node.js, Express
+- 🔹 **DevOps & Tools:** Docker, Nginx, Git, Vercel  
 
-```bash
-# npm
-npm install
+## 💼 Projects  
+### 🏆 [Wash Pay](https://washpay.app/)  
+_Designed for making payments to use washing and drying machines, featuring a membership system, discounts, and various promotions._  
+🔹 **Tech Stack:** Nuxt 3, Nuxt UI, Tailwind CSS  
+🔹 **Features:** Authentication, SSR, PWA Support  
+ 
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 📫 Contact Me  
+- ✉️ Email: thanadon.tkp@gmail.com  
+- 🌐 Portfolio: [developer-cv](https://thanadon-tkp.github.io/developer-cv/)  
