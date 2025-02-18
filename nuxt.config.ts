@@ -2,22 +2,8 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxt/ui",
-    "@vueuse/nuxt",
-    "@vueuse/motion/nuxt",
-  ],
+  modules: ["@nuxt/ui", "@vueuse/nuxt"],
   colorMode: {
     preference: "light",
-  },
-  tailwindcss: {
-    cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
-    configPath: "tailwind.config",
-    exposeConfig: {
-      level: 2,
-    },
-    config: {},
-    viewer: true,
   },
 });

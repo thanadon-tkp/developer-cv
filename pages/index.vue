@@ -1,6 +1,4 @@
 <script setup>
-import { cn } from "@/libs/utils";
-
 const contacts = [
   {
     icon: "material-symbols:mail",
@@ -33,6 +31,53 @@ const listMenu = [
   {
     key: "projects",
     label: "Projects",
+  },
+];
+const listExperience = [
+  {
+    period: "August 2022 - Present",
+    job: "Front End Developer",
+    companyName: "T-DEV Co., Ltd.",
+    companyLink: "https://www.facebook.com/tdevco/",
+    description:
+      "Developed internal web applications for the organization, including machine monitoring systems, admin dashboards, and payment gateways, while optimizing website performance through caching techniques and file size minimization. Collaborated seamlessly with Back-End developers to integrate features, contributed to the development of new functionalities for the company’s online platform, and worked closely with the team under project lead supervision. Regularly communicated project updates to ensure alignment and progress across all stakeholders.",
+    technologies: [
+      "JavaScript",
+      "Vue.js",
+      "Nuxt.js",
+      "HTML",
+      "CSS & SCSS",
+      "Tailwind CSS",
+      "Nuxt UI",
+      "Git",
+      "Docker",
+    ],
+  },
+  {
+    period: "July 2021 - March 2022",
+    job: "Internship",
+    companyName: "Siam Retail Development Co., Ltd",
+    companyLink: null,
+    description:
+      "Developed a web application to streamline ERP data preparation for internal use, utilizing C# and the .NET Framework for backend coding, Bootstrap 5 for responsive design, and SQL Server and Oracle for database management. Additionally, contributed to website design using Figma to create user-friendly interfaces.",
+    technologies: [
+      "C#",
+      ".NET Framework",
+      "Bootstrap 5",
+      "HTML & CSS",
+      "JavaScript",
+      "SQL Server",
+      "Oracle",
+    ],
+  },
+  {
+    period: "2018 - 2019",
+    job: "Hardware,MII Camp 2 | Software,MII Camp 3",
+    companyName: "Mahanakorn University of Technology",
+    companyLink: null,
+    description:
+      "A volunteer camp for repairing computers in rural schools, involving teams specializing in hardware, software, and networking.",
+    technologies: [],
   },
 ];
 
@@ -226,7 +271,7 @@ const listProjects = computed(() => {
           variant="link"
           color="gray"
           target="_blank"
-          class="hover:text-white duration-300 outline-none"
+          class="hover:text-white duration-300 outline-none flex items-center gap-1"
           :label="item.label"
           :ui="{
             icon: {
