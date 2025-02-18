@@ -35,53 +35,6 @@ const listMenu = [
     label: "Projects",
   },
 ];
-const listExperience = [
-  {
-    period: "August 2022 - Present",
-    job: "Front End Developer",
-    companyName: "T-DEV Co., Ltd.",
-    companyLink: "https://www.facebook.com/tdevco/",
-    description:
-      "Developed internal web applications for the organization, including machine monitoring systems, admin dashboards, and payment gateways, while optimizing website performance through caching techniques and file size minimization. Collaborated seamlessly with Back-End developers to integrate features, contributed to the development of new functionalities for the company’s online platform, and worked closely with the team under project lead supervision. Regularly communicated project updates to ensure alignment and progress across all stakeholders.",
-    technologies: [
-      "JavaScript",
-      "Vue.js",
-      "Nuxt.js",
-      "HTML",
-      "CSS & SCSS",
-      "Tailwind CSS",
-      "Nuxt UI",
-      "Git",
-      "Docker",
-    ],
-  },
-  {
-    period: "July 2021 - March 2022",
-    job: "Internship",
-    companyName: "Siam Retail Development Co., Ltd",
-    companyLink: null,
-    description:
-      "Developed a web application to streamline ERP data preparation for internal use, utilizing C# and the .NET Framework for backend coding, Bootstrap 5 for responsive design, and SQL Server and Oracle for database management. Additionally, contributed to website design using Figma to create user-friendly interfaces.",
-    technologies: [
-      "C#",
-      ".NET Framework",
-      "Bootstrap 5",
-      "HTML & CSS",
-      "JavaScript",
-      "SQL Server",
-      "Oracle",
-    ],
-  },
-  {
-    period: "2018 - 2019",
-    job: "Hardware,MII Camp 2 | Software,MII Camp 3",
-    companyName: "Mahanakorn University of Technology",
-    companyLink: null,
-    description:
-      "A volunteer camp for repairing computers in rural schools, involving teams specializing in hardware, software, and networking.",
-    technologies: [],
-  },
-];
 
 const about = ref(null);
 const aboutIsVisible = useElementVisibility(about);
@@ -123,8 +76,9 @@ const listProjects = computed(() => {
           text: ["Web monitor & control", "(Laundry)"],
         },
         {
-          type: "video",
-          src: "/washpay-demo-1.mp4",
+          type: "image",
+          src: "/washpay-1.jpeg",
+          text: ["Home App"],
         },
         {
           type: "image",
@@ -169,14 +123,16 @@ const listProjects = computed(() => {
         text: ["Web monitor & control", "(Laundry)"],
       },
       {
-        type: "video",
-        src: "/washpay-demo-1.mp4",
+        type: "image",
+        src: "/washpay-1.jpeg",
+        text: ["Home App"],
       },
     ],
     [
       {
-        type: "video",
-        src: "/washpay-demo-2.mp4",
+        type: "image",
+        src: "/washpay-2.jpeg",
+        text: ["Order the machine, pay"],
       },
       {
         type: "image",
@@ -224,26 +180,20 @@ const listProjects = computed(() => {
     >
       <!-- title -->
       <div>
-        <BlurFade in-view :delay="250">
-          <h1
-            class="text-3xl font-bold tracking-tight text-slate-200 sm:text-5xl"
-          >
-            Thanadon Trakanpong
-          </h1>
-        </BlurFade>
-        <BlurFade in-view :delay="350 * 2">
-          <h2
-            class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
-          >
-            Front End Developer
-          </h2>
-        </BlurFade>
-        <BlurFade in-view :delay="350 * 3">
-          <p class="mt-4 max-w-xs leading-normal">
-            Passionate about creating user-friendly websites and building
-            seamless user experiences.
-          </p>
-        </BlurFade>
+        <h1
+          class="text-3xl font-bold tracking-tight text-slate-200 sm:text-5xl"
+        >
+          Thanadon Trakanpong
+        </h1>
+        <h2
+          class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
+        >
+          Front End Developer
+        </h2>
+        <p class="mt-4 max-w-xs leading-normal">
+          Passionate about creating user-friendly websites and building seamless
+          user experiences.
+        </p>
       </div>
       <!-- menu -->
       <div class="flex flex-col gap-4 max-lg:hidden w-fit">
