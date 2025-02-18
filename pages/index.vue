@@ -1,4 +1,6 @@
 <script setup>
+import { cn } from "@/libs/utils";
+
 const contacts = [
   {
     icon: "material-symbols:mail",
@@ -49,8 +51,8 @@ const listExperience = [
       "CSS & SCSS",
       "Tailwind CSS",
       "Nuxt UI",
+      "Git",
       "Docker",
-      "Golang",
     ],
   },
   {
@@ -87,6 +89,16 @@ const experience = ref(null);
 const experienceIsVisible = useElementVisibility(experience);
 const projects = ref(null);
 const projectsIsVisible = useElementVisibility(projects);
+const { width } = useWindowSize();
+
+const playVideo = (value) => {
+  const video = value.target.getElementsByTagName("video")[0];
+  video.play();
+};
+const pauseVideo = (value) => {
+  const video = value.target.getElementsByTagName("video")[0];
+  video.pause();
+};
 
 const menuActive = computed(() => {
   let menu = "";
@@ -101,6 +113,106 @@ const menuActive = computed(() => {
 
   return menu;
 });
+const listProjects = computed(() => {
+  if (width.value < 640) {
+    return [
+      [
+        {
+          type: "image",
+          src: "/im-control-desktop.png",
+          text: ["Web monitor & control", "(Laundry)"],
+        },
+        {
+          type: "video",
+          src: "/washpay-demo-1.mp4",
+        },
+        {
+          type: "image",
+          src: "/im-control-desktop-3.png",
+          text: ["Manage Branches"],
+        },
+        {
+          type: "image",
+          src: "/im-control-desktop-2.png",
+          text: ["Dashboard"],
+        },
+      ],
+      [
+        {
+          type: "image",
+          src: "/otteri-2.png",
+          text: ["Web Admin"],
+        },
+        {
+          type: "image",
+          src: "/qr-box-1.png",
+          text: ["QR Box", "monitor & control"],
+        },
+        {
+          type: "image",
+          src: "/qr-box-4.png",
+          text: ["QR Box", "summary"],
+        },
+        {
+          type: "image",
+          src: "/qr-box-3.png",
+          text: ["Control machine"],
+        },
+      ],
+    ];
+  }
+  return [
+    [
+      {
+        type: "image",
+        src: "/im-control-desktop.png",
+        text: ["Web monitor & control", "(Laundry)"],
+      },
+      {
+        type: "video",
+        src: "/washpay-demo-1.mp4",
+      },
+    ],
+    [
+      {
+        type: "video",
+        src: "/washpay-demo-2.mp4",
+      },
+      {
+        type: "image",
+        src: "/im-control-desktop-3.png",
+        text: ["Manage Branches"],
+      },
+      {
+        type: "image",
+        src: "/im-control-desktop-2.png",
+        text: ["Dashboard"],
+      },
+    ],
+    [
+      {
+        type: "image",
+        src: "/otteri-2.png",
+        text: ["Web Admin"],
+      },
+      {
+        type: "image",
+        src: "/qr-box-1.png",
+        text: ["QR Box", "monitor & control"],
+      },
+      {
+        type: "image",
+        src: "/qr-box-4.png",
+        text: ["QR Box", "summary"],
+      },
+      {
+        type: "image",
+        src: "/qr-box-3.png",
+        text: ["Control machine"],
+      },
+    ],
+  ];
+});
 </script>
 
 <template>
@@ -112,20 +224,26 @@ const menuActive = computed(() => {
     >
       <!-- title -->
       <div>
-        <h1
-          class="text-3xl font-bold tracking-tight text-slate-200 sm:text-5xl"
-        >
-          Thanadon Trakanpong
-        </h1>
-        <h2
-          class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
-        >
-          Front End Developer
-        </h2>
-        <p class="mt-4 max-w-xs leading-normal">
-          Passionate about creating user-friendly websites and building seamless
-          user experiences.
-        </p>
+        <BlurFade in-view :delay="250">
+          <h1
+            class="text-3xl font-bold tracking-tight text-slate-200 sm:text-5xl"
+          >
+            Thanadon Trakanpong
+          </h1>
+        </BlurFade>
+        <BlurFade in-view :delay="350 * 2">
+          <h2
+            class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
+          >
+            Front End Developer
+          </h2>
+        </BlurFade>
+        <BlurFade in-view :delay="350 * 3">
+          <p class="mt-4 max-w-xs leading-normal">
+            Passionate about creating user-friendly websites and building
+            seamless user experiences.
+          </p>
+        </BlurFade>
       </div>
       <!-- menu -->
       <div class="flex flex-col gap-4 max-lg:hidden w-fit">
@@ -175,7 +293,7 @@ const menuActive = computed(() => {
       <section
         id="about"
         ref="about"
-        class="mb-16 scroll-mt-16 md:mb-24 lg:scroll-mt-24"
+        class="mb-16 scroll-mt-16 md:mb-24 lg:mb-32 lg:scroll-mt-24"
       >
         <!-- title -->
         <div
@@ -206,7 +324,7 @@ const menuActive = computed(() => {
       <section
         id="experience"
         ref="experience"
-        class="mb-16 scroll-mt-16 md:mb-24 lg:scroll-mt-24"
+        class="mb-16 scroll-mt-16 md:mb-24 lg:mb-32 lg:scroll-mt-24"
       >
         <!-- title -->
         <div
@@ -268,8 +386,10 @@ const menuActive = computed(() => {
       <section
         id="projects"
         ref="projects"
-        class="mb-16 scroll-mt-16 md:mb-24 lg:scroll-mt-24"
+        class="relative mb-16 scroll-mt-16 md:mb-24 lg:mb-32 lg:scroll-mt-24"
       >
+        <!-- particles -->
+        <Particles :accelerate="true" class="absolute -top-10 -z-10" />
         <!-- title -->
         <div
           class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
@@ -280,41 +400,44 @@ const menuActive = computed(() => {
             Projects
           </h2>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-          cupiditate quo quis molestias doloremque distinctio magni repudiandae
-          illo explicabo veniam rerum quos, beatae, placeat optio assumenda
-          debitis eveniet unde neque. Veniam beatae, alias optio rem obcaecati
-          quaerat asperiores dolorem nostrum illo sed repudiandae sit sint.
-          Eligendi commodi voluptatibus veritatis. Adipisci eveniet perspiciatis
-          a dolor omnis consequuntur nesciunt odit facere dolore voluptates
-          delectus, eaque suscipit tenetur cupiditate quod accusamus ad labore,
-          in consequatur praesentium necessitatibus quas atque tempora
-          reiciendis? Sapiente, beatae quo eius mollitia sed nihil dolorum dicta
-          hic sunt alias, asperiores assumenda cum inventore totam voluptatum
-          vel rem ipsa vero! Libero impedit vel at autem natus saepe minus,
-          assumenda deleniti nisi quisquam. Aperiam ex fugiat soluta blanditiis
-          earum ad. Quod aliquam nihil eligendi corrupti eos vel veritatis in ut
-          maxime repudiandae minus autem hic tempore, molestiae earum similique
-          at architecto illo sapiente explicabo! Ipsum ea, sunt consectetur fuga
-          quidem cum commodi praesentium fugit eum odio hic obcaecati quia
-          exercitationem eveniet rem earum ab corporis inventore amet? Velit
-          accusantium soluta alias quia recusandae possimus rerum quasi
-          voluptates at repellendus suscipit quos vero, voluptate neque? Cumque,
-          rerum deserunt labore quisquam dignissimos eius facere assumenda illum
-          modi iste voluptates id autem accusantium laborum, repellat itaque
-          asperiores error voluptate ut perferendis debitis? Consequatur totam
-          laudantium repellat sequi error voluptas quaerat accusantium modi
-          saepe vel quia id qui, tempora minus mollitia nulla voluptate fugit
-          quis commodi maiores aliquam. Id minus dolorem nam sequi repellat
-          necessitatibus aliquid ea, ipsa dolorum? Perspiciatis dolores iure quo
-          vitae omnis ipsa architecto, impedit tempore iusto adipisci
-          perferendis accusamus minima voluptate ut. Inventore possimus porro
-          eos nisi ipsam vitae deserunt quo enim pariatur doloremque. Aliquam
-          odit illo repellendus facilis, autem animi non doloremque sed dolorum
-          ea, sequi in excepturi magnam repellat. A ea officiis accusantium
-          debitis vitae dolorem neque sint odit?
-        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div class="flex gap-3 flex-col" v-for="project in listProjects">
+            <template v-for="file in project">
+              <div
+                v-if="file.type == 'image'"
+                class="relative hover:scale-110 hover:z-10 duration-150"
+              >
+                <img :src="file.src" :class="file.class" />
+                <div
+                  class="absolute hover:opacity-0 duration-200 flex flex-col justify-center items-center top-0 left-0 w-full h-full bg-black/50 text-white font-semibold"
+                >
+                  <small
+                    v-for="text in file.text || []"
+                    class="text-center text-xs/4"
+                  >
+                    {{ text }}
+                  </small>
+                </div>
+              </div>
+              <div
+                v-else-if="file.type == 'video'"
+                class="relative"
+                @mouseenter="playVideo"
+                @mouseleave="pauseVideo"
+              >
+                <video muted loop>
+                  <source :src="file.src" type="video/mp4" />
+                </video>
+                <div
+                  class="absolute hover:opacity-0 duration-200 flex justify-center items-center top-0 left-0 w-full h-full bg-black/50 text-white font-semibold"
+                >
+                  <span class="max-sm:hidden">Hover me!</span>
+                  <span class="sm:hidden">Click me!</span>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
       </section>
     </main>
   </div>

@@ -2,7 +2,7 @@
 useHead({
   title: "Thanadon Trakanpong",
   htmlAttrs: {
-    class: 'scroll-smooth'
+    class: "scroll-smooth",
   },
   bodyAttrs: {
     class:
@@ -29,8 +29,8 @@ const { width } = useWindowSize();
           #1d4fd820,
           transparent 80%
         )`,
-        // background: 'red'
       }"
     ></div>
+    
   </div>
 </template>
